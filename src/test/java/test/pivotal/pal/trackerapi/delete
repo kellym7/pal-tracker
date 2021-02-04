@@ -1,0 +1,11 @@
+curl -v localhost:8080/time-entries
+curl -v -XPOST -H"Content-Type: application/json" localhost:8080/time-entries -d"{\"projectId\": 1, \"userId\": 2, \"date\": \"2019-01-01\", \"hours\": 8}"
+curl -v localhost:8080/time-entries/${TIME_ENTRY_ID}
+curl -v -XPUT -H"Content-Type: application/json" localhost:8080/time-entries/${TIME_ENTRY_ID} -d"{\"projectId\": 88, \"userId\": 99, \"date\": \"2019-01-01\", \"hours\": 8}"
+curl -v -XDELETE -H"Content-Type: application/json" localhost:8080/time-entries/${TIME_ENTRY_ID}
+
+curl -v http://pal-tracker-kelly-johnston.apps.evans.pal.pivotal.io/time-entries
+curl -v -XPOST -H"Content-Type: application/json" http://pal-tracker-kelly-johnston.apps.evans.pal.pivotal.io/time-entries -d"{\"projectId\": 1, \"userId\": 2, \"date\": \"2019-01-01\", \"hours\": 8}"
+curl -v http://pal-tracker-kelly-johnston.apps.evans.pal.pivotal.io/time-entries/1
+curl -v -XPUT -H"Content-Type: application/json" http://pal-tracker-kelly-johnston.apps.evans.pal.pivotal.io/time-entries/1 -d"{\"projectId\": 88, \"userId\": 99, \"date\": \"2019-01-01\", \"hours\": 5}"
+curl -v -XDELETE -H"Content-Type: application/json" http://pal-tracker-kelly-johnston.apps.evans.pal.pivotal.io/time-entries/1
